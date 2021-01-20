@@ -15,8 +15,10 @@
 
             {% for object in objects %}
             <div class="row mt-5">
-                <div class="col-lg-5 offset-lg-2 col-md-6 align-self-center mt-4 mt-md-0">
-                    <img src="{{ object.meal_image.url }}" alt="" class="img-fluid shadow w-100">
+                <div class="col-lg-4 offset-lg-2 col-md-6 align-self-center mt-4 mt-md-0">
+                    <a href="{% url 'menu:primary-meal-details' object.pk %}">
+                        <img src="{{ object.meal_image.url }}" alt="{{ object.name }}" class="img-fluid shadow w-100">
+                    </a>
                 </div>
                 <div class="col-lg-4 col-md-6 align-self-center py-5 ml-5">
                     <h2 class="special-number">0{{object.pk}}.</h2>

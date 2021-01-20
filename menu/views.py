@@ -1,8 +1,8 @@
+import datetime as dt
 from rest_framework import generics
-from .models import Breakfast, PrimaryMeal, Wine, Lanch, Dinner
 from rest_framework.views import APIView
 from django.views.generic import ListView, DetailView
-import datetime as dt
+from .models import Breakfast, PrimaryMeal, Wine, Lanch, Dinner
 
 
 class PrimaryMealListView(ListView):
@@ -20,7 +20,8 @@ class PrimaryMealListView(ListView):
 
 
 class PrimaryMealDetailView(DetailView):
-    pass
+    model = PrimaryMeal
+    template_name = 'menu/primary_details.html'
 
 
 class PrimaryMealsListAPIView(APIView):
@@ -40,7 +41,9 @@ class WineListView(ListView):
 
 
 class WineDetailView(DetailView):
-    pass
+    model = Wine
+    template_name = 'menu/wine_details.html'
+    context_object_name = 'object'
 
 
 class WineListAPIView(generics.ListAPIView):
