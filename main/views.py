@@ -21,7 +21,7 @@ class MainView(View):
     def get(self, request):
         return render(
             request=request,
-            template_name='main/index.html'
+            template_name='main/main.html'
         )
 
 
