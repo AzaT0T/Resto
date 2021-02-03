@@ -26,7 +26,7 @@ def reserve(request):
 
     return render(
         request=request,
-        template_name='reservation/reservation.html',
+        template_name='reservation/reservations_create.html',
         context={"book_form": book_form}
     )
 
@@ -37,7 +37,7 @@ def display_reservations(request):
 
     return render(
         request=request,
-        template_name='reservation/orders.html',
+        template_name='reservation/reservations_list.html',
         context={"user":user, "all_reservations": all_reservations}
     )
 
